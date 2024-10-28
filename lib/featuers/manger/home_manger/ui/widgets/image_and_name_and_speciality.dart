@@ -28,9 +28,12 @@ class ImageAndNameAndspecialty extends StatelessWidget {
           'Specialist , Manger',
           style: TextStyles.font12mainheavenly,
         ),
-        trailing: const Icon(
-          Icons.add_alert_outlined,
-          size: 30,
+        trailing: IconButton(
+          onPressed: () {},
+          icon: Badge.count(
+            count: 3,
+            child: const Icon(Icons.notifications_outlined),
+          ),
         ),
       ),
     );

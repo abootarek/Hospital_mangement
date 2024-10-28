@@ -17,7 +17,7 @@ class CategorysManger extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                context.pushNamed(Routes.casesmangerscreen);
+                context.pushNamed(Routes.casesMangerScreen);
               },
               child: Container(
                 padding: EdgeInsets.symmetric(
@@ -121,20 +121,25 @@ class CategorysManger extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 100.0.w,
-                      height: 100.0.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        border: Border.all(
-                          color: ColorsApp.white,
-                          width: 2.0.w,
+                    GestureDetector(
+                      onTap: () {
+                        context.pushNamed(Routes.empolyeeScreen);
+                      },
+                      child: Container(
+                        width: 100.0.w,
+                        height: 100.0.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          border: Border.all(
+                            color: ColorsApp.white,
+                            width: 2.0.w,
+                          ),
                         ),
-                      ),
-                      child: const Icon(
-                        Icons.account_box,
-                        color: Colors.white,
-                        size: 50,
+                        child: const Icon(
+                          Icons.account_box,
+                          color: Colors.white,
+                          size: 50,
+                        ),
                       ),
                     ),
                     virticalspace(15),

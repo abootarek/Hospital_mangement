@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hospital_mange/core/helper/extintion.dart';
 import 'package:hospital_mange/core/helper/sixbox.dart';
+import 'package:hospital_mange/core/routing/routs.dart';
 import 'package:hospital_mange/core/theming/colors.dart';
 import 'package:hospital_mange/core/theming/style.dart';
 import 'package:hospital_mange/core/widget/app_text_button.dart';
@@ -39,39 +41,16 @@ class IconsAndNamedAndButtons extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppTextButton(
-                buttonWidth: 130,
-                buttonHeight: 65,
-                buttonText: 'Accept',
-                icon: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(
-                      color: ColorsApp.white,
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.done_outlined,
-                    size: 30,
-                    color: ColorsApp.white,
-                  ),
-                ),
+                horizontalPadding: 60,
+                buttonWidth: 250,
+                buttonHeight: 55,
+                buttonText: 'Show Details',
                 textStyle: TextStyles.font17white,
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(Routes.casesDetailsScreen);
+                },
               ),
               horixontalspace(13),
-              AppTextButton(
-                backgroundColor: ColorsApp.mainyellow,
-                buttonWidth: 130,
-                buttonHeight: 65,
-                buttonText: 'cancel',
-                icon: Icon(
-                  Icons.cancel_outlined,
-                  size: 30,
-                  color: ColorsApp.white,
-                ),
-                textStyle: TextStyles.font17white,
-                onPressed: () {},
-              ),
             ],
           ),
           virticalspace(20),

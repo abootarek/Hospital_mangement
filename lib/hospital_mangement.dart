@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/app_router.dart';
@@ -24,7 +23,7 @@ class HospitalMangement extends StatelessWidget {
           scaffoldBackgroundColor: ColorsApp.white,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.onbordingscreen, // start screen =>onbordingscreen
+        initialRoute: Routes.onBordingScreen, // start screen =>onbordingscreen
       ),
     );
   }

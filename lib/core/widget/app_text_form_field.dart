@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:hospital_mange/core/theming/colors.dart';
 import 'package:hospital_mange/core/theming/style.dart';
 
@@ -12,13 +13,13 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? hintStyle;
   final String hinttext;
   final String? labletext;
-  // final Function(String)? validatore;
   final String? Function(String?)? validator;
 
   final bool? isObscureText;
   final EdgeInsetsGeometry? contentpadding;
   final TextInputType? keyboardType;
   final Widget? suffixicon;
+  final Widget? prefixicon;
   final Color? fillColor;
 
   const AppTextFormField({
@@ -34,6 +35,7 @@ class AppTextFormField extends StatelessWidget {
     this.contentpadding,
     this.keyboardType,
     this.suffixicon,
+    this.prefixicon,
     this.fillColor,
   });
 
@@ -45,6 +47,7 @@ class AppTextFormField extends StatelessWidget {
       obscureText: isObscureText ?? false,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
+        prefixIcon: prefixicon,
         suffixIcon: suffixicon,
         fillColor: fillColor ?? ColorsApp.white,
         filled: true,

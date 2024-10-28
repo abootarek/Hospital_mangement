@@ -15,6 +15,26 @@ class TextStyles {
     fontWeight: FontWeightHelper.normal,
     color: ColorsApp.mainheavenly,
   );
+  static TextStyle font13white = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: ColorsApp.white,
+  );
+  static TextStyle font13black = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: ColorsApp.mainblack,
+  );
+  static TextStyle font14grey = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: ColorsApp.gray,
+  );
+  static TextStyle font14lightblack = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.normal,
+    color: ColorsApp.lightblack,
+  );
   static TextStyle font20white = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.normal,
