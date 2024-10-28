@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/theming/colors.dart';
+import '../../../../../../core/theming/colors.dart';
+
 class DropDownFormField extends StatefulWidget {
-  final List<String> options;
+  final List<String>? options;
   final String? initialValue;
   /////////////////////////// textformfiled
   final InputBorder? focuseBorder;
@@ -21,7 +22,7 @@ class DropDownFormField extends StatefulWidget {
   final Color? fillColor;
   const DropDownFormField({
     super.key,
-    required this.options,
+    this.options,
     this.initialValue,
     this.focuseBorder,
     this.enableBorder,
@@ -62,10 +63,13 @@ class _DropDownFormFieldState extends State<DropDownFormField> {
             hint: Text(
               widget.hinttext,
             ),
-            iconSize: 30.h,
-            iconEnabledColor: ColorsApp.mainheavenly,
-            icon: const Icon(Icons.arrow_drop_down),
+            iconSize: 25.h,
+            icon: const Icon(
+              Icons.arrow_drop_down,
+            ),
             decoration: InputDecoration(
+              prefixIcon: widget.prefixicon,
+              suffixIcon: widget.suffixicon,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.r),
               ),
@@ -84,7 +88,7 @@ class _DropDownFormFieldState extends State<DropDownFormField> {
             ),
             value: _selectedValue,
             items: widget.options
-                .map(
+                ?.map(
                   (option) => DropdownMenuItem(
                     value: option,
                     child: Text(option),

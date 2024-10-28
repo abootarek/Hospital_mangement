@@ -5,4 +5,5 @@ class Routes {
   static const String casesDetailsScreen = '/casesDetailsScreen';
   static const String empolyeeScreen = '/empolyeeScreen';
   static const String addUser = '/addUser';
+  static const String myProfile = '/myProfile';
 }

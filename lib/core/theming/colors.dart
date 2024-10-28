@@ -3,6 +3,12 @@ import 'dart:ui';
 class ColorsApp {
   static Color backgroundcolor = const Color(0xfffcfcfc);
   static Color mainheavenly = const Color(0xff22C7B8);
+  static Color lightheavenly = const Color(0xff2AE2D1);
+  // opicity color
+
+  static Color transheavenly = const Color(0xff2AE2D1).withOpacity(0.2);
+
+  static Color darkheavenly = const Color(0xff17B7A8);
   static Color mainblack = const Color(0xff242424);
   static Color lightblue = const Color(0xff5F9EDC);
   static Color lightgreen = const Color(0xff5FDC89);

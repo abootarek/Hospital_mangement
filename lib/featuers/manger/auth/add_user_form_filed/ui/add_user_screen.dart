@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hospital_mange/core/helper/extintion.dart';
+import 'package:hospital_mange/core/helper/sixbox.dart';
+import 'package:hospital_mange/core/theming/colors.dart';
+import 'package:hospital_mange/featuers/manger/empolyee_screen/ui/empolyee_screen.dart';
+import '../../../../../core/routing/routs.dart';
+import '../../../../../core/theming/style.dart';
+import '../../../../../core/widget/app_text_button.dart';
+import 'widgets/sign_up_form.dart';
+
+class AddUserScreen extends StatelessWidget {
+  const AddUserScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: ColorsApp.white,
+        centerTitle: true,
+        title: Text(
+          'Add User',
+          style: TextStyles.font17Black,
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Positioned(
+              left: 0,
+              top: 0,
+              child: Image.asset(
+                'assets/images/RectangleTop.png',
+              ),
+            ),
+            Positioned(
+              right: 0,
+              bottom: 0,
+              child: Image.asset(
+                'assets/images/Rectanglebutton.png',
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 18.w,
+                vertical: 20.h,
+              ),
+              child: Column(
+                children: [
+                  const SignUpForm(),
+                  virticalspace(15),
+                  AppTextButton(
+                    backgroundColor: ColorsApp.mainheavenly,
+                    horizontalPadding: 100,
+                    buttonHeight: 60,
+                    buttonText: 'Create User',
+                    textStyle: TextStyles.font14white,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

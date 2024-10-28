@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hospital_mange/core/helper/extintion.dart';
 import 'package:hospital_mange/core/theming/colors.dart';
 import 'package:hospital_mange/core/theming/style.dart';
+
+import '../../../../../core/routing/routs.dart';
 
 class ImageAndNameAndspecialty extends StatelessWidget {
   const ImageAndNameAndspecialty({super.key});
@@ -15,9 +18,14 @@ class ImageAndNameAndspecialty extends StatelessWidget {
         contentPadding: EdgeInsets.zero,
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(15.r),
-          child: Image.asset(
-            'assets/images/imge.jpg',
-            height: 45.h,
+          child: GestureDetector(
+            onTap: () {
+              context.pushNamed(Routes.myProfile);
+            },
+            child: Image.asset(
+              'assets/images/imge.jpg',
+              height: 45.h,
+            ),
           ),
         ),
         title: Text(
