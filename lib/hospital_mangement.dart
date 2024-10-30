@@ -23,7 +23,7 @@ class HospitalMangement extends StatelessWidget {
           scaffoldBackgroundColor: ColorsApp.white,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.onBordingScreen, // start screen =>onbordingscreen
+        initialRoute: Routes.loginScreen, // start screen =>onbordingscreen
       ),
     );
   }

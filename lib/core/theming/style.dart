@@ -45,6 +45,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.normal,
     color: ColorsApp.white,
   );
+  static TextStyle font26mainheavenly = TextStyle(
+    fontSize: 26.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsApp.mainheavenly,
+  );
   static TextStyle font17white = TextStyle(
     fontSize: 17.sp,
     fontWeight: FontWeightHelper.normal,

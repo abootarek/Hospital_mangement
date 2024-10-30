@@ -1,4 +1,5 @@
 class Routes {
+  static const String loginScreen = '/loginScreen';
   static const String onBordingScreen = '/onBordingScreen';
   static const String mangerScreen = '/mangerScreen';
   static const String casesMangerScreen = '/casesMangerScreen';

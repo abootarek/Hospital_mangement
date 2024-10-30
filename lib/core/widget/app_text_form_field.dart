@@ -14,6 +14,7 @@ class AppTextFormField extends StatelessWidget {
   final String hinttext;
   final String? labletext;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   final bool? isObscureText;
   final EdgeInsetsGeometry? contentpadding;
@@ -31,6 +32,7 @@ class AppTextFormField extends StatelessWidget {
     required this.hinttext,
     this.labletext,
     this.validator,
+    this.controller,
     this.isObscureText,
     this.contentpadding,
     this.keyboardType,
@@ -43,7 +45,10 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: validator,
+      validator: (value) {
+        return validator!(value);
+      },
+      controller: controller,
       obscureText: isObscureText ?? false,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
