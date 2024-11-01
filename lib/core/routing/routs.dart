@@ -5,6 +5,6 @@ class Routes {
   static const String casesMangerScreen = '/casesMangerScreen';
   static const String casesDetailsScreen = '/casesDetailsScreen';
   static const String empolyeeScreen = '/empolyeeScreen';
-  static const String addUser = '/addUser';
-  static const String myProfile = '/myProfile';
+  static const String addUser = '/addUserScrren';
+  static const String myProfile = '/myProfileScrren';
 }

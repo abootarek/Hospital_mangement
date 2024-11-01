@@ -13,7 +13,7 @@ import '../../featuers/manger/auth/profile/ui/profile_screen.dart';
 import '../../featuers/manger/empolyee_screen/ui/empolyee_screen.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       //LoginScreen
       case Routes.loginScreen:
@@ -43,7 +43,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const EmpolyeeScreen(),
         );
-      // Add User
+      // Add User Screen
       case Routes.addUser:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -51,22 +51,14 @@ class AppRouter {
             child: const AddUserScreen(),
           ),
         );
-      //My profile
+      //My profile Screen
       case Routes.myProfile:
         return MaterialPageRoute(
           builder: (context) => const ProfileScreen(),
         );
-//// Error Message
+// Error Message
       default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text(
-                'No route defined for ${settings.name}',
-              ),
-            ),
-          ),
-        );
+        return null;
     }
   }
 }
