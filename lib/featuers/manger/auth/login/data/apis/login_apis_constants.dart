@@ -1,3 +1,3 @@
 class LoginApisConstants {
-  static const String login = "login";
+  static const String login = "employee/login";
 }

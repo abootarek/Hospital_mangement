@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hospital_mange/core/routing/app_router.dart';
-import 'package:hospital_mange/featuers/manger/auth/add_user_form_filed/ui/widgets/sign_up_form.dart';
 import 'package:hospital_mange/featuers/manger/auth/login/logic/cubit/login_cubit.dart';
 import 'package:hospital_mange/featuers/manger/auth/login/ui/widgets/login_form.dart';
 import 'package:hospital_mange/featuers/manger/auth/login/ui/widgets/login_welcome_page.dart';
@@ -27,6 +25,7 @@ class LoginScreen extends StatelessWidget {
                 left: 0,
                 top: 0,
                 child: Image.asset(
+                  height: 200,
                   'assets/images/RectangleTop.png',
                 ),
               ),
@@ -63,6 +62,7 @@ class LoginScreen extends StatelessWidget {
                         },
                       ),
                       const LoginBlocListener(),
+                      virticalspace(40),
                     ],
                   ),
                 ),

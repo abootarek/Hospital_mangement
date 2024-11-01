@@ -1,6 +1,6 @@
 class ConstansApi {
   static const String apiBaseUrl =
-      "https://hospital-chi-vert.vercel.app/api/v1/employee/";
+      "https://hospital-chi-vert.vercel.app/api/v1/";
   
 }
 

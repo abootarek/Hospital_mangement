@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../../../core/theming/colors.dart';
 
 class DropDownFormField extends StatefulWidget {
@@ -20,7 +21,10 @@ class DropDownFormField extends StatefulWidget {
   final Widget? suffixicon;
   final Widget? prefixicon;
   final Color? fillColor;
-  const DropDownFormField({
+  final TextEditingController? controller;
+  Function(String?)? onChanged;
+
+  DropDownFormField({
     super.key,
     this.options,
     this.initialValue,
@@ -37,6 +41,8 @@ class DropDownFormField extends StatefulWidget {
     this.suffixicon,
     this.prefixicon,
     this.fillColor,
+    this.controller,
+    this.onChanged,
   });
 
   @override
@@ -55,56 +61,50 @@ class _DropDownFormFieldState extends State<DropDownFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          DropdownButtonFormField<String>(
-            hint: Text(
-              widget.hinttext,
-            ),
-            iconSize: 25.h,
-            icon: const Icon(
-              Icons.arrow_drop_down,
-            ),
-            decoration: InputDecoration(
-              prefixIcon: widget.prefixicon,
-              suffixIcon: widget.suffixicon,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(
-                  color: ColorsApp.graywhight,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(
-                  color: ColorsApp.lightgreen,
-                ),
-              ),
-            ),
-            value: _selectedValue,
-            items: widget.options
-                ?.map(
-                  (option) => DropdownMenuItem(
-                    value: option,
-                    child: Text(option),
-                  ),
-                )
-                .toList(),
-            onChanged: (value) {
-              setState(() {
-                _selectedValue = value;
-              });
-            },
-            validator: (value) =>
-                value == null ? 'Please select an option' : null,
+    return Column(
+      children: [
+        DropdownButtonFormField<String>(
+          hint: Text(
+            widget.hinttext,
           ),
-        ],
-      ),
+          iconSize: 25.h,
+          icon: const Icon(
+            Icons.arrow_drop_down,
+          ),
+          decoration: InputDecoration(
+            prefixIcon: widget.prefixicon,
+            suffixIcon: widget.suffixicon,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16.r),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16.r),
+              borderSide: BorderSide(
+                color: ColorsApp.graywhight,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16.r),
+              borderSide: BorderSide(
+                color: ColorsApp.lightgreen,
+              ),
+            ),
+          ),
+          value: _selectedValue,
+          items: widget.options
+              ?.map(
+                (option) => DropdownMenuItem(
+                  value: option,
+                  child: Text(option),
+                ),
+              )
+              .toList(),
+          validator: (value) {
+            return widget.validator!(value);
+          },
+          onChanged: (widget.onChanged),
+        ),
+      ],
     );
   }
 }

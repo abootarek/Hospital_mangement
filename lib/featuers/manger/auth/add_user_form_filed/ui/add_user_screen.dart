@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hospital_mange/core/helper/extintion.dart';
 import 'package:hospital_mange/core/helper/sixbox.dart';
 import 'package:hospital_mange/core/theming/colors.dart';
+import 'package:hospital_mange/featuers/manger/auth/add_user_form_filed/data/logic/cubit/sign_up_cubit.dart';
 import 'package:hospital_mange/featuers/manger/empolyee_screen/ui/empolyee_screen.dart';
 import '../../../../../core/routing/routs.dart';
 import '../../../../../core/theming/style.dart';
 import '../../../../../core/widget/app_text_button.dart';
+import 'widgets/sign_up_bloc_listner.dart';
 import 'widgets/sign_up_form.dart';
 
 class AddUserScreen extends StatelessWidget {
@@ -15,7 +18,9 @@ class AddUserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: ColorsApp.white,
       appBar: AppBar(
+        surfaceTintColor: ColorsApp.white,
         elevation: 0,
         backgroundColor: ColorsApp.white,
         centerTitle: true,
@@ -56,8 +61,11 @@ class AddUserScreen extends StatelessWidget {
                     buttonHeight: 60,
                     buttonText: 'Create User',
                     textStyle: TextStyles.font14white,
-                    onPressed: () {},
+                    onPressed: () {
+                      validateThenDoSignup(context);
+                    },
                   ),
+                  const SignUpBlocListener(),
                 ],
               ),
             ),
@@ -65,5 +73,11 @@ class AddUserScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateThenDoSignup(BuildContext context) {
+    if (context.read<SignUpCubit>().formKey.currentState!.validate()) {
+      context.read<SignUpCubit>().emitSignUp();
+    }
   }
 }

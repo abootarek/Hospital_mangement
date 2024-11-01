@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_api_services.dart';
+part of 'sign_up_services.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'login_api_services.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
-class _LoginApiServices implements LoginApiServices {
-  _LoginApiServices(
+class _SignUpApisServices implements SignUpApisServices {
+  _SignUpApisServices(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -24,20 +24,20 @@ class _LoginApiServices implements LoginApiServices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
+  Future<SignUpResponse> signUp(SignUpRequastBody signUpRequastBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(loginRequestBody.toJson());
-    final _options = _setStreamType<LoginResponse>(Options(
+    _data.addAll(signUpRequastBody.toJson());
+    final _options = _setStreamType<SignUpResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'employee/login',
+          'employee/createEmployee',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -47,9 +47,9 @@ class _LoginApiServices implements LoginApiServices {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late LoginResponse _value;
+    late SignUpResponse _value;
     try {
-      _value = LoginResponse.fromJson(_result.data!);
+      _value = SignUpResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
