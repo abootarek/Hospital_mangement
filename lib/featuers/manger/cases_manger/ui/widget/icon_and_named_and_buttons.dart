@@ -47,7 +47,7 @@ class IconsAndNamedAndButtons extends StatelessWidget {
                 buttonText: 'Show Details',
                 textStyle: TextStyles.font17white,
                 onPressed: () {
-                  context.pushNamed(Routes.casesDetailsScreen);
+                  context.pushNamed(Routes.casesDetailsDoctorScreen);
                 },
               ),
               horixontalspace(13),
